@@ -51,19 +51,26 @@ next_user = computed(() => {
       <input class="mb-2 p-2 pl-4 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 placeholder-gray-400 focus:placeholder-transparent focus:outline-none" placeholder="Search for TikTok Username" v-model="user.nextusername">
       <NuxtLink class="bg-slate-500 rounded-lg mb-2 p-2 text-white" :to="next_user">Search</NuxtLink>
       </div>
-      <div class="col-span-1 rounded-lg bg-white p-2">
+      <div v-if="data.error" class="col-span-1 rounded-lg bg-white p-2 text-slate-400 p-4">
+      <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="currentColor" class="mx-auto mb-8" viewBox="0 0 16 16">
+          <path d="M13.879 10.414a2.501 2.501 0 0 0-3.465 3.465l3.465-3.465Zm.707.707-3.465 3.465a2.501 2.501 0 0 0 3.465-3.465Zm-4.56-1.096a3.5 3.5 0 1 1 4.949 4.95 3.5 3.5 0 0 1-4.95-4.95ZM11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm.256 7a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
+        </svg>
+      
+      <p class="text-3xl text-center">User Not Found</p>
+      </div>
+      <div v-if="!data.error" class="col-span-1 rounded-lg bg-white p-4">
         <img
             class="rounded-full border border-2 border-white h-16 md:h-28 mx-auto"
-            :src="data.users[user.username].avatarThumb"
+            :src="data.image"
           />
-        <p class="mt-4 pl-2 text-l md:text-xl" ><span class="text-slate-500 font-bold">Name: </span>{{data.users[user.username].nickname}}</p>
-        <p class="pl-2 text-l md:text-xl" ><span class="text-slate-500 font-bold">Username: </span>{{data.users[user.username].uniqueId}}</p>
-        <p class="pl-2 text-l md:text-xl" ><span class="text-slate-500 font-bold">Bio: </span>{{data.users[user.username].signature}}</p>
-        <p class="pl-2 text-l md:text-xl" ><span class="text-slate-500 font-bold">followers: </span>{{data.stats[user.username].followerCount}}</p>
-        <p class="pl-2 text-l md:text-xl" ><span class="text-slate-500 font-bold">following: </span>{{data.stats[user.username].followingCount}}</p>
-        <p class="pl-2 text-l md:text-xl" ><span class="text-slate-500 font-bold">Likes: </span>{{data.stats[user.username].heartCount}}</p>
-        <p class="pl-2 text-l md:text-xl" ><span class="text-slate-500 font-bold">Videos: </span>{{data.stats[user.username].videoCount}}</p>
-        <p class="pl-2 text-l md:text-xl" ><span class="text-slate-500 font-bold">Country: </span>{{getName(data.users[user.username].region)}} {{getUnicodeFlagIcon(data.users[user.username].region)}}</p>
+        <p class="mt-4 pl-2 text-l md:text-xl" ><span class="text-slate-500 font-bold">Name: </span>{{data.name}}</p>
+        <p class="pl-2 text-l md:text-xl" ><span class="text-slate-500 font-bold">Username: </span>{{data.username}}</p>
+        <p class="pl-2 text-l md:text-xl" ><span class="text-slate-500 font-bold">Bio: </span>{{data.bio}}</p>
+        <p class="pl-2 text-l md:text-xl" ><span class="text-slate-500 font-bold">followers: </span>{{data.followers}}</p>
+        <p class="pl-2 text-l md:text-xl" ><span class="text-slate-500 font-bold">following: </span>{{data.following}}</p>
+        <p class="pl-2 text-l md:text-xl" ><span class="text-slate-500 font-bold">Likes: </span>{{data.likes}}</p>
+        <p class="pl-2 text-l md:text-xl" ><span class="text-slate-500 font-bold">Videos: </span>{{data.videos}}</p>
+        <p class="pl-2 text-l md:text-xl" ><span class="text-slate-500 font-bold">Country: </span>{{data.country}}</p>
         
       </div>
 

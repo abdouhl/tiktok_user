@@ -1,7 +1,4 @@
 <script setup>
-import getUnicodeFlagIcon from 'country-flag-icons/unicode'
-import {  getName } from 'country-list'
-
 const user = reactive({ username:"" })
 var next_user =null
 next_user = computed(() => {
