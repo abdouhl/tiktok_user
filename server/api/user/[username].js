@@ -48,7 +48,7 @@ result={
   videos: data.data.stats[
     username
   ].videoCount,
-  country: getName(data.data.users[username].region)+' '+getUnicodeFlagIcon(data.data.users[username].region),
+  country: data.data.users[username].region==''? "" : getName(data.data.users[username].region)+' '+getUnicodeFlagIcon(data.data.users[username].region),
 }
 }
     return  result

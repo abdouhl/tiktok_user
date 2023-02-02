@@ -17,7 +17,6 @@ next_user = computed(() => {
     }
 })
 
-
 </script>
 <template>
   <div
