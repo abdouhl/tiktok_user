@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     apiUrl: process.env.API_URL,
   },
-  //app: { head: { link: [ {rel: 'icon',href: '/favicon.svg'} ] } },
+  app: { head: { link: [ {rel: 'icon',href: '/favicon.svg'} ] } },
   css: [
     '@/assets/css/main.css',
   ],
