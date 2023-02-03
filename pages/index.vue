@@ -20,7 +20,7 @@ useHead({
 </script>
 <template>
   
-  <div id="main" class="grid content-center w-screen h-screen bg-gradient-to-r from-slate-100 via-slate-300 to-slate-200" >
+  <div class="grid content-center w-screen h-screen bg-gradient-to-r from-slate-100 via-slate-300 to-slate-200" >
 
     <div class="px-2 md:px-24 lg:px-36 w-full h-fit max-w-5xl mx-auto py-2 md:py-4">
       <h1 style="font-family: 'Signika Negative', sans-serif;" class="text-center text-5xl md:text-7xl">Tiktok User Data</h1>
@@ -38,11 +38,6 @@ useHead({
 
 @import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@600&display=swap');
 
-#main {
-  background-image: url("bg.svg");
-  background-size: 50px;
-  background-repeat: repeat;
-}
 body {
 background-color: #f1f5f9;
 }
