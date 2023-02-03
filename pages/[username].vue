@@ -43,7 +43,7 @@ next_user = computed(() => {
       <span class="sr-only">Loading...</span>
     </div>
   </div>
-  <div v-else class="grid content-center w-screen h-screen bg-gradient-to-tr from-slate-100 via-slate-300 to-slate-200">
+  <div v-else  id="main" class="grid content-center w-screen h-screen bg-gradient-to-tr from-slate-100 via-slate-300 to-slate-200">
     <div class="px-2 md:px-24 lg:px-36 w-full max-w-5xl mx-auto py-2 md:py-4">
       <div id="post-form" class="mb-4 w-full flex flex-row gap-2 md:gap-4">
       
@@ -80,9 +80,15 @@ next_user = computed(() => {
 </template>
 
 <style>
+#main {
+  background-image: url("bg.svg");
+  background-size: 50px;
+  background-repeat: repeat;
+}
 
 body {
 background-color: #f1f5f9;
 }
 
 </style>
+
